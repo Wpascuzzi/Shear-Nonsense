@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c7hi7xk2le1yq"]
+
+[node name="SpeedSlider" type="VSlider"]
+offset_right = 16.0
+offset_bottom = 224.0

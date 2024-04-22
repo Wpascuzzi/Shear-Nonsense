@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://df87e0lvcmn4s"]
+
+[ext_resource type="Script" path="res://score.gd" id="1_knnt7"]
+
+[node name="Score" type="RichTextLabel"]
+offset_right = 147.0
+offset_bottom = 40.0
+text = "Score: "
+scroll_active = false
+script = ExtResource("1_knnt7")
+
+[node name="ScoreValue" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 1.0
+offset_right = 70.0
+offset_bottom = 26.0
+text = "0"
+scroll_active = false

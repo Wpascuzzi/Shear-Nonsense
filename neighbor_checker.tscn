@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://v2jqf1mrkc4n"]
+
+[ext_resource type="Script" path="res://neighbor_checker.gd" id="1_aw8pj"]
+[ext_resource type="Texture2D" uid="uid://bobyrubqd4wv" path="res://icon.svg" id="2_kqqdy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhmro"]
+size = Vector2(10, 10)
+
+[node name="NeighborChecker" type="Area2D"]
+script = ExtResource("1_aw8pj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, -6)
+shape = SubResource("RectangleShape2D_dhmro")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-6, -6)
+scale = Vector2(0.078125, 0.078125)
+texture = ExtResource("2_kqqdy")

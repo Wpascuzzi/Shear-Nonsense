@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtvogv310nx3w"]
+
+[ext_resource type="Script" path="res://wool_clump.gd" id="1_owifx"]
+[ext_resource type="Texture2D" uid="uid://bnia4bakdvqpg" path="res://sprites/wool_clump.png" id="2_t16lk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pclv1"]
+radius = 4.0
+
+[node name="WoolClump" type="Area2D" groups=["clumps"]]
+script = ExtResource("1_owifx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_t16lk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pclv1")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dciuk2ogqmevq"]
+
+[ext_resource type="Script" path="res://shaver.gd" id="1_8msw4"]
+[ext_resource type="Texture2D" uid="uid://bw8p7skwh5d1v" path="res://sprites/shearer.png" id="2_8qege"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhmro"]
+size = Vector2(2.75, 3.5)
+
+[node name="Shaver" type="Area2D"]
+script = ExtResource("1_8msw4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.375, 2.25)
+shape = SubResource("RectangleShape2D_dhmro")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 8.47033e-22)
+scale = Vector2(0.730469, 0.730469)
+texture = ExtResource("2_8qege")

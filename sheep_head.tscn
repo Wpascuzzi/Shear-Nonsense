@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://y0m2irlewlx3"]
+
+[ext_resource type="Texture2D" uid="uid://bpfow2ai6yvhi" path="res://sprites/sheep_head.png" id="1_43gfs"]
+
+[node name="SheepHead" type="Sprite2D"]
+z_index = 1
+texture = ExtResource("1_43gfs")

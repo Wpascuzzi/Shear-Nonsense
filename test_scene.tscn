@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://opdkt00jc4yu"]
+
+[ext_resource type="PackedScene" uid="uid://bte4d8xcax0kp" path="res://sheep.tscn" id="1_rqw0b"]
+[ext_resource type="PackedScene" uid="uid://dciuk2ogqmevq" path="res://shaver.tscn" id="2_y7hoa"]
+[ext_resource type="PackedScene" uid="uid://1itcolr6m462" path="res://hud.tscn" id="3_xtv46"]
+
+[node name="TestScene" type="Node"]
+
+[node name="Sheep" parent="." instance=ExtResource("1_rqw0b")]
+position = Vector2(169, 126)
+
+[node name="Shaver" parent="." instance=ExtResource("2_y7hoa")]
+position = Vector2(469, 135)
+
+[node name="HUD" parent="." instance=ExtResource("3_xtv46")]
