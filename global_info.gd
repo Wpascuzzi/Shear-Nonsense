@@ -1,6 +1,3 @@
-class_name GlobalInfo
-
-
 extends Node
 
 signal game_started

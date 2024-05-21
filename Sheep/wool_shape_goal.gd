@@ -36,7 +36,7 @@ func calculate_scores():
 	for col_idx in clump_map.size():
 		var col = clump_map[col_idx]
 		for clump in col:
-			if not clump is WoolClump:
+			if not is_instance_valid(clump) or not clump is WoolClump:
 				continue
 			if Geometry2D.is_point_in_polygon(clump.position, collision_polygon_2d.polygon):
 				pos_score += 1

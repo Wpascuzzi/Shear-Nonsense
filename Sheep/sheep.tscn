@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bte4d8xcax0kp"]
+
+[ext_resource type="Script" path="res://Sheep/sheep.gd" id="1_mfu63"]
+[ext_resource type="PackedScene" uid="uid://y0m2irlewlx3" path="res://Sheep/sheep_head.tscn" id="2_ueb22"]
+[ext_resource type="PackedScene" uid="uid://dx2s3ub76dav7" path="res://Sheep/sheep_wool.tscn" id="3_uhc23"]
+[ext_resource type="PackedScene" uid="uid://q7y07a6qjbbg" path="res://Sheep/wool_shape_goal.tscn" id="4_jc5mj"]
+
+[node name="Sheep" type="Node2D"]
+script = ExtResource("1_mfu63")
+
+[node name="SheepHead" parent="." instance=ExtResource("2_ueb22")]
+z_index = 2
+
+[node name="SheepWool" parent="." instance=ExtResource("3_uhc23")]
+
+[node name="WoolShapeGoal" parent="SheepWool" instance=ExtResource("4_jc5mj")]
+z_index = 1

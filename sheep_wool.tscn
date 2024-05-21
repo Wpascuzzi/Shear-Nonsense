@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dx2s3ub76dav7"]
-
-[ext_resource type="Script" path="res://sheep_wool.gd" id="1_fnn55"]
-
-[node name="SheepWool" type="Node2D"]
-script = ExtResource("1_fnn55")

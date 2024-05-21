@@ -32,6 +32,11 @@ Start={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="wool_clumps"
+2d_physics/layer_2="shaver"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

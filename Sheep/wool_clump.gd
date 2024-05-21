@@ -18,11 +18,11 @@ func _ready():
 	
 func _process(delta):
 	return
-	highlight = false
-	var overlapping_areas = get_overlapping_areas()
-	for area in overlapping_areas:
-		if area is NeighborChecker:
-			highlight = true
+#	highlight = false
+#	var overlapping_areas = get_overlapping_areas()
+#	for area in overlapping_areas:
+#		if area is NeighborChecker:
+#			highlight = true
 	return
 	if highlight == false:
 		_color_neighbors(Color(1, 1, 1))
@@ -33,9 +33,7 @@ func _color_neighbors(color):
 	for neighbor in neighbors:
 		neighbor.modulate = color
 
-func _on_area_entered(area):
-	if area is Shaver:
-		remove_clump()
+
 		
 	# DEBUG STUFF
 #	elif area is NeighborChecker:
@@ -52,13 +50,14 @@ func update_neighbours_added():
 	for clump in neighbors:
 		clump.neighbors.append(self)
 
-# DEPRECATED vvv
+
 
 func update_neighbours_removed():
 	for clump in neighbors:
 		clump.neighbors.erase(self)
 		#clump.try_remove_floating()
 
+# DEPRECATED vvv
 func try_remove_floating():
 	var clump 
 	var queue = []
@@ -103,3 +102,12 @@ func find_neighbors():
 		neighborArr.append(coordinates + Vector2(0, 1))
 		neighborArr.append(coordinates + Vector2(-1, 0))
 	return neighborArr
+
+
+func _on_body_entered(body: Node) -> void:
+	if body is Shaver:
+		remove_clump()
+
+func _on_area_entered(area):
+	if area is Shaver:
+		remove_clump()

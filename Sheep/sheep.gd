@@ -3,8 +3,8 @@ extends Node2D
 
 var rotation_speed = 50 # measured in degrees per second
 # eventually replace these with an object that stores wool pattern data
-var wool_width = 20
-var wool_height = 20
+var wool_width = 60
+var wool_height = 60
 
 @onready var sheep_head = $SheepHead
 @onready var sheep_wool = $SheepWool
