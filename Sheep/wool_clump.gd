@@ -31,7 +31,7 @@ func _process(delta):
 	else:
 		_color_neighbors(Color(.9, .8, .8))
 	if detached:
-		
+		pass
 
 func _color_neighbors(color):
 	for neighbor in neighbors:
