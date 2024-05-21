@@ -2,7 +2,8 @@ class_name WoolClump
 
 extends Area2D
 
-signal clump_removed(coordinates)
+signal clump_destroyed(coordinates)
+signal clump_detached(coordinates)
 
 # a list of neighbor clump objects. 
 # Think about if this should instead be a list of coordinates
@@ -12,6 +13,7 @@ var coordinates : Vector2
 var anchored : bool
 var island_id
 var highlight = false
+var detached = false
 
 func _ready():
 	update_neighbours_added()
@@ -28,6 +30,8 @@ func _process(delta):
 		_color_neighbors(Color(1, 1, 1))
 	else:
 		_color_neighbors(Color(.9, .8, .8))
+	if detached:
+		
 
 func _color_neighbors(color):
 	for neighbor in neighbors:
@@ -42,10 +46,15 @@ func _color_neighbors(color):
 #		_color_neighbors(Color(.9, .8, .8))
 
 func remove_clump():
-	update_neighbours_removed()
-	clump_removed.emit(coordinates)
+	detach_clump()
+	clump_destroyed.emit(coordinates)
 	queue_free()
 
+func detach_clump():
+	update_neighbours_removed()
+	clump_detached.emit(coordinates)
+	detached = true
+	
 func update_neighbours_added():
 	for clump in neighbors:
 		clump.neighbors.append(self)

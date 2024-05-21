@@ -118,7 +118,7 @@ func add_wool_clump(x, y):
 		if possible_neighbor is WoolClump:
 			clump.neighbors.append(possible_neighbor)
 	
-	clump.clump_removed.connect(remove_clump_from_map)
+	clump.clump_destroyed.connect(remove_clump_from_map)
 				
 	add_child(clump)
 	return clump
@@ -154,7 +154,7 @@ func check_anchored_clumps(clumps_per_frame := -1):
 	for col in clump_map_snap:
 		for clump in col:
 			if is_instance_valid(clump) and clump is WoolClump and !clump.anchored:
-				clump.remove_clump()
+				clump.detach_clump()
 				
 			processed_clumps += 1
 			if clumps_per_frame >= 0 and processed_clumps >= clumps_per_frame:
